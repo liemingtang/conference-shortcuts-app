@@ -1,0 +1,21 @@
+{
+  "name": "www",
+  "homepage": "https://github.com/liemingtang/conference-shortcuts-app",
+  "authors": [
+    "Lie Ming Tang <liemingtang@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "bootstrap": "^4.5.3"
+  }
+}
