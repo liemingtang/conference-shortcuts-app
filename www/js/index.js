@@ -134,4 +134,107 @@ var app = {
     }
 };
 
-app.initialize();
+// app.initialize();
+
+
+var vueApp = new Vue({
+    el: '#vueApp',
+    data: {
+      tabs: 
+      [
+        {
+          tabId: "Win", 
+          show: true, 
+          btns: [
+            {
+              title: "Mute All",
+              text: "",
+              action: "Mute / Unmute", 
+              icon: "mic-mute-fill.svg",
+              badge: "All", 
+              btn_outline: "btn-outline-primary" 
+            },
+            {
+              title: "Mute (except host)",
+              text: "Mute/unmute audio for everyone except host",
+              action: "Mute / Unmute", 
+              icon: "mic-mute.svg",
+              badge: "Except Host", 
+              btn_outline: "btn-outline-primary"
+            },
+            {
+              title: "Raise Hand",
+              text: "",
+              action: "Raise Hand", 
+              icon: "hand-index.svg", 
+              btn_outline: "btn-outline-danger"
+            },
+            {
+              title: "Start / Stop Video",
+              text: "",
+              action: "Start / Stop", 
+              icon: "camera-video-off.svg", 
+              btn_outline: "btn-outline-primary"
+            },
+            {
+              title: "Speaker / Gallery",
+              text: "",
+              action: "Speaker / Gallery", 
+              icon: "people-fill.svg", 
+              btn_outline: "btn-outline-primary"
+            },
+            {
+              title: "Recording",
+              text: "",
+              action: "Recording", 
+              icon: "file-earmark-arrow-down.svg",
+              badge: "Local", 
+              btn_outline: "btn-outline-primary"
+            },
+            {
+              title: "Recording",
+              text: "",
+              action: "Recording", 
+              icon: "cloud-arrow-up.svg",
+              badge: "Cloud", 
+              btn_outline: "btn-outline-primary"
+            },
+            {
+              title: "Pause / Resume Recording",
+              text: "",
+              action: "Pause / Resume Recording", 
+              icon: "pause-fill.svg", 
+              btn_outline: "btn-outline-primary"
+            }
+          ]
+        },
+        {
+          tabId: "Mac",
+          show:false, 
+          btns: []
+        }, 
+        {
+          tabId: "iPad", 
+          show:false, 
+          btns: []
+        }, 
+        {
+          tabId: "Andriod", 
+          show:false, 
+          btns: []
+        }
+      ]
+    },
+    methods: {
+      showTab(tabObj) {
+        console.debug("show tab: " + tabObj.tabId);
+        for (tab in this.tabs) {
+          if (tab.tabId == tabObj.tabId) {
+            tab.show = true;
+          } else {
+            tab.show = false;
+          }
+        }
+      },
+    }
+  })
