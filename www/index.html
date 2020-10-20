@@ -34,7 +34,7 @@
             <div id="outputDiv"></div>
         </div> -->
 
-        <div id="vueApp" class="container">
+        <div id="vueApp" class="container px-1">
 <!--         
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li v-for="tabObj in tabs" class="nav-item" role="presentation">
@@ -52,7 +52,7 @@
 
         <!-- :href="'#content_'+tabObj.tabId" -->
 
-        <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+        <ul class="nav nav-pills nav-fill px-2" id="pills-tab" role="tablist">
           
           <li v-for="tabObj in tabs" class="nav-item" role="presentation">
             <a class="nav-link" 
@@ -65,7 +65,7 @@
             :aria-selected="tabObj.default">{{tabObj.tabId}}</a>
           </li>
         </ul>
-        <div class="tab-content" id="pills-tabContent">
+        <div class="tab-content mx-0" id="pills-tabContent">
 
           <div 
             v-for="(tabObj, index) in tabs" 
@@ -76,19 +76,23 @@
             :aria-labelledby="tabObj.tabId + '-tab'">
             
             <div class="p-0 m-0 d-flex justify-content-center flex-wrap">
-          
+                            
               <button v-for="btn in tabObj.btns" type="button" 
-                class="m-1 p-2 btn btn-lg d-flex justify-content-between align-items-center" style="width: 10rem;"
+                v-on:click="btnClick(tabObj.tabId, btn)"
+                class="mx-1 my-3 p-2 btn btn-md d-flex justify-content-between align-items-center shadow " style="width: 10rem;"
                 :class="btn.btn_outline">
-                <span>
+                  <span class="text-left">
+                    {{btn.action}}
+                    <span v-if="btn.badge">({{btn.badge}})</span>
+                  </span>
+                <!-- <span>
                   {{btn.action}}
                   <span v-if="btn.badge" class="badge badge-light">{{btn.badge}}</span>
-                </span>
+                </span> -->
                 <img :src="'img/bootstrap-icons/'+btn.icon" alt="" width="25em" height="25em" title="Bootstrap">
               </button>
     
-    
-            </div> <!-- end container -->
+            </div>    <!-- end container -->
     
           </div>
           

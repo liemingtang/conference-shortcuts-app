@@ -158,7 +158,7 @@ var vueApp = new Vue({
               title: "Mute (except host)",
               text: "Mute/unmute audio for everyone except host",
               action: "Mute / Unmute", 
-              icon: "mic-mute.svg",
+              icon: "mic-mute-fill.svg",
               badge: "Except Host", 
               btn_outline: "btn-outline-primary"
             },
@@ -167,12 +167,12 @@ var vueApp = new Vue({
               text: "",
               action: "Raise Hand", 
               icon: "hand-index.svg", 
-              btn_outline: "btn-outline-danger"
+              btn_outline: "btn-outline-success"
             },
             {
               title: "Start / Stop Video",
               text: "",
-              action: "Start / Stop", 
+              action: "Start / Stop Video", 
               icon: "camera-video-off.svg", 
               btn_outline: "btn-outline-primary"
             },
@@ -236,5 +236,10 @@ var vueApp = new Vue({
           }
         }
       },
+
+      btnClick(tabId, btn) {
+        console.log(tabId + " action clicked: ");
+        console.log(btn);
+      }
     }
   })
